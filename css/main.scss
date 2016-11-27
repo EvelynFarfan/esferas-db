@@ -1,0 +1,85 @@
+@import "_variables";
+@import "_mixin";
+@import "_esfera";
+
+* {
+	box-sizing : border-box;
+}
+body{
+	padding-top: 80px;
+}
+
+@keyframes leaves {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+.container {
+	background: white;
+	// --------------------------
+	position: relative;
+  width: 24em;
+  height: 24em;
+  padding: 2.8em;
+  border: dashed 1px white;
+  border-radius: 50%;
+  margin: 1.75em auto 0;
+	.esfera{
+		background: $color-esfera;
+		border-radius: $base-tamanio-esfera/2;
+		height: $base-tamanio-esfera;
+		width: $base-tamanio-esfera;
+		padding: $base-tamanio-esfera/4;
+		box-shadow: 0px 0px 30px 3px $color-brillo;
+		// ---------------
+		display: block;
+  	position: absolute;
+  	top: 50%; left: 50%;
+  	margin: -2em;
+	}
+	.estrella-1{
+		@include star-center(35px, 0px);
+		@include star(12px);
+		transform: rotate(90deg) translate(-12em) rotate(-90deg);
+	}
+	.estrella-2{
+		@include star-center(40px, 30px);
+		@include star(10px);
+		transform: rotate(-140deg) translate(12em) rotate(140deg);
+	}
+	.estrella-3{
+		@include star-center(30px);
+		@include star(10px);
+		transform: rotate(-40deg) translate(12em) rotate(40deg);
+	}
+	.estrella-4{
+		@include star-center(30px);
+		@include star(10px);
+		transform: rotate(-550deg) translate(12em) rotate(550deg);
+	}
+	.estrella-5{
+		@include star-center(20px, 30px);
+		@include star(9px);
+		transform: rotate(370deg) translate(12em) rotate(-370deg);
+	}
+	.estrella-6{
+		@include star-center(15px, 30px);
+		@include star(9px);
+		transform: rotate(-240deg) translate(12em) rotate(240deg);
+	}
+	.estrella-7{
+		@include star-center(15px, 30px);
+		@include star(9px);
+		transform: rotate(-300deg) translate(12em) rotate(300deg);
+	}
+}
+
+// .container div.esfera {
+//   display: block;
+//   position: absolute;
+//   top: 50%; left: 50%;
+//   margin: -2em;
+// }
